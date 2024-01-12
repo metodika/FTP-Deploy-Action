@@ -3680,13 +3680,17 @@ class FTPSyncProvider {
                 yield this.uploadFile(file.name, "replace");
             }
             // delete old files
+	    /*
             for (const file of diffs.delete.filter(item => item.type === "file")) {
                 yield this.removeFile(file.name);
             }
+	    */
             // delete old folders
+		/*
             for (const file of diffs.delete.filter(item => item.type === "folder")) {
                 yield this.removeFolder(file.name);
             }
+	    */
             this.logger.all(`----------------------------------------------------------------`);
             this.logger.all(`🎉 Sync complete. Saving current server state to "${this.serverPath + this.stateName}"`);
             if (this.dryRun === false) {
